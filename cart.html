@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니 기능</title>
+    <style>
+        button{
+            min-width: 20px;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="coffee">
+        <a href="detail/americano.html">
+            <img src="images/americano.jfif" width="110">
+        </a>
+        <p id="coffee_name">아메리카노</p>
+        <p>가격 : <span id="aPrice">2,000원</span></p>
+        <p>수량 : <span>1</span></p>
+        <button onclick="showMenu(1)">주문</button>
+    </div>
+
+
+    <p><span id="order_name"></span>(<span id="price"></span>원)
+        수량 : <button id="down" >-</button>
+        <span id="amount">1</span>
+        <button id="up">+</button>
+        금액 : <input type="text" value="0" readonly id="total_price">
+    </p>
+</body>
+<script>
+    //상품명
+    coffee_name = document.querySelector('#coffee_name').innerHTML
+    document.querySelector('#order_name').innerHTML = coffee_name
+    //상품가격
+    aPrice = document.getElementById('aPrice').innerHTML
+    document.getElementById('price').innerHTML = aPrice
+
+    
+
+
+
+
+    
+
+    price = document.getElementById('price').innerHTML
+    amount = document.getElementById('amount').innerHTML
+
+    up_button = document.querySelector('#up')
+    up_button.addEventListener('click', () => {
+
+        amount = document.getElementById("amount").innerHTML
+        amount++
+        if (amount > 10){
+            amount = 10
+            alert('한 종류당 10개까지 동시주문 가능합니다.')
+        }
+        document.getElementById("amount").innerHTML = amount
+
+        total_price = price*amount
+        document.getElementById('total_price').value = total_price
+    });
+    
+    down_button = document.querySelector('#down')
+    down_button.addEventListener('click', () => {
+
+        
+        amount = document.getElementById('amount').innerHTML
+        if (amount != 1){
+            amount--
+        }   else {
+            alert('수량은 최소 1개 입니다.')
+        }
+        document.getElementById("amount").innerHTML = amount
+        
+        total_price = price*amount
+        document.getElementById('total_price').value = total_price
+        
+        
+    });
+
+
+    total_price = price*amount
+    document.getElementById('total_price').value = total_price
+    console.log(price*amount)
+
+
+
+</script>
+
+</html>

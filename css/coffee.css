@@ -1,0 +1,30 @@
+
+#wrapper {
+    width: 600px;
+    margin: 0 auto;
+    border: 10px solid brown;
+    background-color: aqua;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+div a {
+    clear: both;
+    text-align: right;
+    position: relative;
+    padding: 1em;
+    left: 510px;
+    bottom: 10px;
+}
+
+.img {
+    width: 200px;
+    float: left;
+    padding: 1em;
+}
+
+.americano {
+    width: 95%;
+    margin-left: 20px;
+    background-color: beige;
+}
